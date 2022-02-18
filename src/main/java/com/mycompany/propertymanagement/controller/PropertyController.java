@@ -1,4 +1,4 @@
-package com.mycompany.propertymanagement.conntroller;
+package com.mycompany.propertymanagement.controller;
 
 import com.mycompany.propertymanagement.dto.PropertyDTO;
 import com.mycompany.propertymanagement.service.PropertyService;
