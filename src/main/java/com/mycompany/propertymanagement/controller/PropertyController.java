@@ -14,8 +14,8 @@ import java.util.List;
 @RequestMapping("api/v1")
 public class PropertyController {
 
-    @Value("${pms.dummy}")
-    private String dummy;
+//    @Value("${pms.dummy}")
+//    private String dummy;
 
 
     @Autowired
@@ -30,8 +30,8 @@ public class PropertyController {
 
     @GetMapping("/allproperty")
     public  ResponseEntity<List<PropertyDTO>> getAllProperties() {
-        System.out.println(dummy);
-        System.out.println("another"+dummy);
+//        System.out.println(dummy);
+//        System.out.println("another"+dummy);
         List<PropertyDTO> propertyList = propertyService.getAllProperties();
         ResponseEntity<List<PropertyDTO>> responseEntity = new ResponseEntity<>(propertyList, HttpStatus.OK);
         return responseEntity;
