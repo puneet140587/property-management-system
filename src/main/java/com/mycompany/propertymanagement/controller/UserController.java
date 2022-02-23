@@ -19,11 +19,18 @@ public class UserController {
     @Autowired
     UserService userService;
 
-
     @PostMapping("/register")
     public ResponseEntity<UserDTO> saveProperty(@RequestBody UserDTO userDTO) {
         userDTO = userService.register(userDTO);
         ResponseEntity<UserDTO> responseEntity = new ResponseEntity<>(userDTO, HttpStatus.CREATED);
         return responseEntity;
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<UserDTO> login(@RequestBody UserDTO userDTO) {
+        userDTO = userService.login(userDTO.getOwnerEmail(), userDTO.getPassword());
+        ResponseEntity<UserDTO> responseEntity = new ResponseEntity<>(userDTO, HttpStatus.OK);
+        return responseEntity;
+    }
+
 }
